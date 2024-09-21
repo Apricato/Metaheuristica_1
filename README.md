@@ -1,2 +1,2 @@
 # Metaheuristica_1
-Proyecto metaheuristica 1
+Proyecto metaheuristicas 1
