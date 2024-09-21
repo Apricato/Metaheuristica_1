@@ -28,6 +28,9 @@ class Particle:
             self.best_position = self.position
             self.best_score = score
     
+    def log_load(self):
+        print(f'Load: {sum(self.position)}')
+    
     def __str__(self):
         return f'Position: {self.position}, Best Position: {self.best_position}, Best Score: {self.best_score}'
     
@@ -41,6 +44,7 @@ class PSO:
         self.global_best_score = float('inf')
     
     def run(self):
+        previous_task_number = tasks
         for _ in range(max_iterations):
             for particle in self.particles:
                 score = self.evaluate(particle)
@@ -50,6 +54,10 @@ class PSO:
                     self.global_best_score = score
                 particle.update_velocity(self.global_best_position)
                 particle.update_position()
+                current_task_number = sum(particle.position)
+                if previous_task_number - current_task_number >= 10000:
+                    particle.log_load()
+                    previous_task_number = current_task_number
     
     def evaluate(self, particle):
         return sum([p*task_time for p in particle.position])
