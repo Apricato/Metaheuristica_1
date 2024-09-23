@@ -22,7 +22,9 @@ class Particle:
         self.best_average_load = float('inf')
     
     def update_position(self):
-        self.position = [max(0, min(p, tasks)) for p in self.position]
+        # TODO: - Reduce one task every second
+        # TODO: - Make it dynamic
+        self.position = [p - 1 for p in self.position]
     
     def update_velocity(self, global_best_position):
         self.velocity = [w*v + c1*random()*(bp-p) + c2*random()*(global_best_position[i]-p) for i, (p, v, bp) in enumerate(zip(self.position, self.velocity, self.best_position))]
