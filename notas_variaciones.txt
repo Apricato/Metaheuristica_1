@@ -1,0 +1,23 @@
+
+VALORES Y SU IMPACTO EN EL FUNCIONAMIENTO DE PSO
+
+SOBRE INERCIA 
+Una inercia mayor a uno explorara mas, una inercia menor explota
+Y si exploras primero y luego lo cambias para explotar
+
+
+SOBRE  C1 Y C2
+
+La clasica es hacer 2 y 2 pero puedes tener variaciones   entre 1.5 y 2 
+ C1 (Constante cognitiva) hace a las particulas mas independientes
+ C2 (Constante Social ) las hace actuar tomando mas en cuenta a las demas, es decir seguira al lider
+
+Al igual que con la inercia se pueden tener variaciones dinamicas.
+
+SOBRE ITERACIONES:
+- Para problemas sencillos ( como funciones unimodales) se recomiendan
+de 100 a 500
+-Para problemas complejos (con dimensionalidad alta ) es decir con muchos minimos
+y maximos locales entre 500 a 2000 iteraciones 
+- Para problemas muy complejos ( mas de 50 variables o dimensiones ) de 2000 a 5000 
+
